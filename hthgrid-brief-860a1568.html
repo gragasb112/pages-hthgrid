@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华体会 · 产品说明与站点介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f5f5f5;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.7;
+            color: #1e2a3a;
+            padding: 2rem 1.2rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        /* hero section */
+        .hero {
+            background: #ffffff;
+            border-radius: 2rem;
+            padding: 3rem 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
+            border: 1px solid #e8edf2;
+            transition: box-shadow 0.25s;
+        }
+
+        .hero:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #0f1a2b;
+            margin-bottom: 0.75rem;
+            line-height: 1.2;
+        }
+
+        .hero .sub {
+            font-size: 1.1rem;
+            color: #536878;
+            border-left: 3px solid #b0c4d8;
+            padding-left: 1.2rem;
+            margin: 0.75rem 0 1.5rem 0;
+            max-width: 640px;
+        }
+
+        .hero p {
+            color: #2d3e55;
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
+            max-width: 740px;
+        }
+
+        .hero strong {
+            font-weight: 600;
+            color: #1a2a3f;
+        }
+
+        /* 卡片网格 */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 1.5rem;
+            padding: 1.8rem 1.8rem 2rem;
+            border: 1px solid #e4e9ef;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            transition: transform 0.15s ease, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+        }
+
+        .card h2 {
+            font-size: 1.3rem;
+            font-weight: 550;
+            color: #132232;
+            margin-bottom: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card h2::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 1.1rem;
+            background: #7c95b3;
+            border-radius: 4px;
+            margin-right: 0.25rem;
+        }
+
+        .card p, .card li {
+            font-size: 0.95rem;
+            color: #2b3d54;
+            margin-bottom: 0.5rem;
+        }
+
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .card li {
+            padding: 0.2rem 0;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .card li::before {
+            content: "·";
+            position: absolute;
+            left: 0;
+            color: #809bb7;
+            font-weight: bold;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #eaf0f7;
+            color: #1f3856;
+            font-size: 0.7rem;
+            font-weight: 500;
+            padding: 0.2rem 0.7rem;
+            border-radius: 30px;
+            margin-right: 0.4rem;
+            letter-spacing: 0.02em;
+            border: 1px solid #d3deea;
+        }
+
+        /* 使用场景 + 提示 */
+        .scenario {
+            background: #ffffff;
+            border-radius: 1.5rem;
+            padding: 2rem 2rem 1.8rem;
+            margin-bottom: 2rem;
+            border: 1px solid #e2e9f0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+        }
+
+        .scenario h2 {
+            font-size: 1.3rem;
+            font-weight: 550;
+            color: #112233;
+            margin-bottom: 1.2rem;
+        }
+
+        .scenario-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .scenario-item {
+            background: #f8fafc;
+            border-radius: 1rem;
+            padding: 1.2rem 1.4rem;
+            border: 1px solid #e1e8ef;
+        }
+
+        .scenario-item h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1c3249;
+            margin-bottom: 0.4rem;
+        }
+
+        .scenario-item p {
+            font-size: 0.9rem;
+            color: #3f5772;
+        }
+
+        .faq-mini {
+            background: #ffffff;
+            border-radius: 1.5rem;
+            padding: 1.6rem 2rem 2rem;
+            border: 1px solid #e2e9f0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            margin-bottom: 2rem;
+        }
+
+        .faq-mini h2 {
+            font-size: 1.25rem;
+            font-weight: 550;
+            color: #132232;
+            margin-bottom: 1.1rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid #eaeef4;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 600;
+            color: #142b42;
+            margin-bottom: 0.15rem;
+            font-size: 0.95rem;
+        }
+
+        .faq-item p {
+            font-size: 0.9rem;
+            color: #3b506b;
+        }
+
+        /* 链接区 — 自然嵌入 */
+        .mention-line {
+            background: #fafbfc;
+            border-radius: 1.2rem;
+            padding: 1.2rem 1.8rem;
+            border: 1px solid #dee5ed;
+            margin: 1.8rem 0 0.8rem;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #2b405b;
+        }
+
+        .mention-line a {
+            color: #1d4b7a;
+            text-decoration: none;
+            font-weight: 550;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .mention-line a:hover {
+            border-bottom-color: #1d4b7a;
+        }
+
+        /* 响应式 */
+        @media (max-width: 720px) {
+            body {
+                padding: 1.2rem 0.9rem;
+            }
+
+            .hero {
+                padding: 2rem 1.5rem;
+                border-radius: 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+
+            .scenario-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card, .scenario, .faq-mini {
+                padding: 1.4rem;
+                border-radius: 1.2rem;
+            }
+
+            .mention-line {
+                padding: 1rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.4rem;
+            }
+            .hero .sub {
+                font-size: 0.95rem;
+                padding-left: 0.9rem;
+            }
+        }
+
+        .footer-note {
+            margin-top: 2.2rem;
+            color: #6f859d;
+            font-size: 0.8rem;
+            text-align: center;
+            border-top: 1px solid #dde4ec;
+            padding-top: 1.6rem;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- hero -->
+    <div class="hero">
+        <h1>华体会 · 产品说明</h1>
+        <div class="sub">面向信息整合与轻量服务的站点摘要</div>
+        <p><strong>华体会</strong> 是一个以内容聚合与基础工具为定位的网站，致力于提供结构清晰的信息索引与轻量化在线功能。站点围绕实用性展开设计，不追求冗余交互，帮助用户快速定位所需的板块或资源。</p>
+        <p>当前版本侧重信息展示与引导，后续会根据使用反馈逐步扩展交互模块。所有公开内容均经过基础校验，力求准确与整洁。</p>
+    </div>
+
+    <!-- 亮点卡片 2x2 -->
+    <div class="grid">
+        <div class="card">
+            <h2>结构摘要</h2>
+            <p>页面分类采用扁平目录，主要板块包括：<span class="tag">产品手册</span><span class="tag">常见索引</span><span class="tag">功能预览</span>  栏目命名直观，减少学习成本。每个分区均提供简短说明，便于快速判断是否与需求匹配。</p>
+            <p>站点地图在首页底部以文本方式呈现，无需额外插件即可浏览全貌。</p>
+        </div>
+        <div class="card">
+            <h2>核心特点</h2>
+            <ul>
+                <li>基于静态页面构建，加载速度稳定，无需复杂环境</li>
+                <li>内容采用 Markdown 源文件管理，更新可追溯</li>
+                <li>所有链接、资源均指向明确目标，无隐含跳转</li>
+                <li>界面适配移动端与桌面端，关键信息不断层</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h2>使用建议</h2>
+            <p>建议首次使用时先浏览「产品手册」分区，了解整体框架；日常查找可借助页面内关键词定位（Ctrl+F / ⌘F）。如果某个板块未显示预期内容，可尝试刷新或稍后重试——部分资源为定时同步。</p>
+            <p>对于需要登录或授权才能使用的功能，站点会有明确标识，请以页面实际提示为准。</p>
+        </div>
+        <div class="card">
+            <h2>可信说明</h2>
+            <p><strong>华体会</strong> 不收集用户隐私信息，不植入第三方跟踪脚本。所有外链均标注目标域名，内部链接均指向 <a href="https://hthgrid.com.cn" style="text-decoration: none; font-weight: 500; color: #1d4b7a;">华体会</a> 自身资源。网站部署采用 HTTPS，数据传输经过加密。如发现链接失效或内容异常，可通过站点页脚预留的方式反馈。</p>
+        </div>
+    </div>
+
+    <!-- 使用场景 + 提示 -->
+    <div class="scenario">
+        <h2>典型使用场景</h2>
+        <div class="scenario-grid">
+            <div class="scenario-item">
+                <h3>快速查阅</h3>
+                <p>需要获取某个模块的基本定义、使用条件或相关示例时，直接从首页导航进入对应分区，无需层层跳转。</p>
+            </div>
+            <div class="scenario-item">
+                <h3>功能预览</h3>
+                <p>在决定使用某项工具或服务前，通过站内预览区了解界面样式、输入输出格式，降低试错成本。</p>
+            </div>
+            <div class="scenario-item">
+                <h3>内容索引</h3>
+                <p>站点内维护了一份按字母排序的常用条目索引，适合需要快速定位名词或步骤的场景。</p>
+            </div>
+            <div class="scenario-item">
+                <h3>离线参考</h3>
+                <p>部分说明页面支持打印或另存为 PDF，方便在无网络环境下作为参考资料使用。</p>
+            </div>
+        </div>
+        <p style="margin-top: 1.2rem; font-size: 0.9rem; color: #4e6a87; background: #f0f4fa; border-radius: 0.75rem; padding: 0.6rem 1rem; border-left: 3px solid #b6cae0;">
+            ⚡ 提示：站点仍在持续补充内容，如果某个场景对应的功能尚未上线，页面上会有“开发中”标记。
+        </p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-mini">
+        <h2>常见疑问摘要</h2>
+        <div class="faq-item">
+            <strong>是否需要注册才能使用？</strong>
+            <p>大部分内容无需注册即可浏览。仅特定交互功能（如提交定制请求）会要求提供联系方式，该部分有单独说明。</p>
+        </div>
+        <div class="faq-item">
+            <strong>信息更新频率如何？</strong>
+            <p>核心内容随项目迭代同步更新，通常每周至少一次内容审查。非核心页面可能更新较慢，但会标注最后修订日期。</p>
+        </div>
+        <div class="faq-item">
+            <strong>遇到链接失效怎么办？</strong>
+            <p>你可以先尝试从首页重新定位目标页面。如果问题持续，请通过站点“联系”页面的表单提交，维护人员会在两个工作日内处理。</p>
+        </div>
+        <div class="faq-item">
+            <strong>移动端显示是否完整？</strong>
+            <p>所有页面均适配手机与平板，但部分表格或代码块在窄屏下会横向滚动，建议横屏阅读以获得最佳体验。</p>
+        </div>
+    </div>
+
+    <!-- 自然嵌入链接的句子 -->
+    <div class="mention-line">
+        如果你对本站结构或内容有任何疑问，欢迎通过 <a href="https://hthgrid.com.cn">华体会</a> 上的公开渠道与我们联系。我们会根据有效反馈持续优化文档与功能。
+    </div>
+
+    <div class="footer-note">
+        站点版本 · 2025  |  内容仅供参考，具体以实际页面为准
+    </div>
+
+</div>
+</body>
+</html>
